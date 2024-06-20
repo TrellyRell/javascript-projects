@@ -19,31 +19,41 @@ let preparedForLiftOff = true;
 
 // add logic below to verify total number of astronauts for shuttle launch does not exceed 7
 if (astronautCount > 7) {
-    console.log("Too many astronaunts");
     preparedForLiftOff = false;
+    console.log("Too many astronaunts");
+    
 } else {
        console.log("the perfect amount");
 }
 // add logic below to verify all astronauts are ready
 if (astronauntStatus != "ready") {
-    console.log("not ready");
     preparedForLiftOff = false;
+    console.log("not ready");
 } else {
        console.log("ready for lift off");
 }
 // add logic below to verify the total mass does not exceed the maximum limit of 850000
 
-if  (totalMassKg < maximumMassLimit) {
+if  (totalMassKg > maximumMassLimit) {
+    preparedForLiftOff = false;
     console.log("weight is good ");
-} else
+} else {
        console.log("weight exceeded");
        preparedForLiftOff = false;
-
+}
 // add logic below to verify the fuel temperature is within the appropriate range of -150 and -300
-if (fue)
-// add logic below to verify the fuel level is at 100%
+if (fuelTempCelsius < minimumFuelTemp || fuelTempCelsius > maximumFuelTemp) {
+    preparedForLiftOff = false
+    console.log("Fuel temperature is not in range - DO NOT LAUNCH!!!!!")
+    
+}
 
+// add logic below to verify the fuel level is at 100%
+if (fuelLevel != "100%") {
+    preparedForLiftOff = false
+    console.log("not enough fuel!!!!!!");
+}
 // add logic below to verify the weather status is clear
 
 // Verify shuttle launch can proceed based on above conditions
- 
+
